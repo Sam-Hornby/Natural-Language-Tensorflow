@@ -231,9 +231,6 @@ for l in range(no_of_batches):
 accuracy = 100 * cumu_right/len(train_premises)
 print("accuracy is {0} percent".format(accuracy))
 
-# Unfortunately I was unable to fix the bug that meant I could not feed the test set in. This bug is that
-# my padding function pads to the largest sentence length in the data set it is looking at, either the training
-# or the test so I can only feed in one data set with out getting a shape error. To fix this I just need to combine
-# the training and test into one data set, use the padding function and then resplit them and this would allow me
-# to feed the test set into the for loop directly above this comment. It is still possible to work out the accuracy
-# on the training set though.
+# This is just to help you to be able to get this mechanism working for yourself, not the final result. If you want to implement 
+#this for yourself remember to read the paper and add in the Linear layer. Also for speed purposes I suggest you use buckets instead
+# of combining your data set into one and then padding. This will mean there a lot less redundant values in your data set.
